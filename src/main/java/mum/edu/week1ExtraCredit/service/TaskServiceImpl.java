@@ -2,12 +2,17 @@ package mum.edu.week1ExtraCredit.service;
 
 import java.util.List;
 
-import mum.edu.week1ExtraCredit.dao.ITaskDAO;
-import mum.edu.week1ExtraCredit.dao.TaskDAOImpl;
-import mum.edu.week1ExtraCredit.domain.Task;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import mum.edu.week1ExtraCredit.dao.ITaskDAO;
+import mum.edu.week1ExtraCredit.domain.Task;
+@Service
+@Transactional
 public class TaskServiceImpl implements ITaskService {
-    ITaskDAO taskDAO = new TaskDAOImpl();
+	@Autowired
+    private ITaskDAO taskDAO;
 	@Override
 	public void addTask(Task task) {
 		// TODO Auto-generated method stub

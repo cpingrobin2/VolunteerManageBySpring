@@ -6,11 +6,12 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import mum.edu.week1ExtraCredit.domain.Project;
 import mum.edu.week1ExtraCredit.domain.Status;
 import mum.edu.week1ExtraCredit.factory.HibernateUtilFactory;
-
+@Repository
 public class ProjectDAOImpl implements IProjectDAO {
 	@Override
 	public void AddProject(Project project) {

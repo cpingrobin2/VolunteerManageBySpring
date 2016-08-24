@@ -2,13 +2,18 @@ package mum.edu.week1ExtraCredit.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import mum.edu.week1ExtraCredit.dao.IProjectDAO;
-import mum.edu.week1ExtraCredit.dao.ProjectDAOImpl;
 import mum.edu.week1ExtraCredit.domain.Project;
 import mum.edu.week1ExtraCredit.domain.Status;
-
+@Service
+@Transactional
 public class ProjectServiceImpl implements IProjectService {
-	IProjectDAO projectDAO = new ProjectDAOImpl();
+	@Autowired
+    private IProjectDAO projectDAO;
 	@Override
 	public void AddProject(Project project) {
 		// TODO Auto-generated method stub

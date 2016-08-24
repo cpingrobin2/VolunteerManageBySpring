@@ -6,10 +6,11 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import mum.edu.week1ExtraCredit.domain.Task;
 import mum.edu.week1ExtraCredit.factory.HibernateUtilFactory;
-
+@Repository
 public class TaskDAOImpl implements ITaskDAO {
 	@Override
 	public void addTask(Task task) {
